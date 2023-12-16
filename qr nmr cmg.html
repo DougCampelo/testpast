@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quer Namorar Comigo?</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 50px;
+    }
+
+    #mensagem {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .caixa {
+      display: inline-block;
+      padding: 10px;
+      margin: 10px;
+      border: 1px solid #ccc;
+      cursor: pointer;
+    }
+
+    #sim {
+      background-color: #4CAF50;
+      color: #fff;
+    }
+
+    #nao {
+      background-color: #e74c3c;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div id="mensagem">Quer namorar comigo?</div>
+  <div id="sim" class="caixa" onclick="resposta('sim')">Sim</div>
+  <div id="nao" class="caixa" onclick="resposta('nao')">Não</div>
+  <div id="resultado" style="display:none; margin-top: 20px;"></div>
+
+  <script>
+    function resposta(opcao) {
+      var resultado = document.getElementById('resultado');
+      if (opcao === 'nao') {
+        // Muda a posição da caixa "não"
+        var nao = document.getElementById('nao');
+        nao.style.position = 'absolute';
+        nao.style.left = Math.floor(Math.random() * window.innerWidth) + 'px';
+        nao.style.top = Math.floor(Math.random() * window.innerHeight) + 'px';
+      } else if (opcao === 'sim') {
+        // Exibe mensagem de amor
+        resultado.innerHTML = 'Eu te amo &lt;3';
+        resultado.style.display = 'block';
+      }
+    }
+  </script>
+</body>
+</html>
